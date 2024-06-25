@@ -1,0 +1,35 @@
+create table categorias(
+id int primary key,
+nombre varchar (40)	
+);
+
+create table productos(
+idProducto int primary key,
+nombre varchar(40),
+precio double,
+idCategoria int,
+foreign key (idCategoria) references categorias(id)
+);
+
+create table clientes(
+idClient int primary key,
+nombreCliente varchar(40),
+telefono varchar(10)
+);
+
+create table provedores(
+idProvedor int primary key,
+nombre varchar(40),
+direccion varchar(20),
+telefono varchar(10)
+);
+
+alter table productos modify column idProducto int auto_increment;
+alter table categorias modify column id int auto_increment;
+alter table clientes modify column idClient int auto_increment;
+alter table provedores modify column idProvedor int auto_increment;
+
+select * from categorias;
+select * from clientes;
+select * from productos;
+select * from provedores;
